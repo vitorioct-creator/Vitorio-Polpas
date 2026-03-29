@@ -648,6 +648,17 @@
       color: rgba(255,255,255,0.65);
       font-size: 0.9rem;
     }
+    
+    .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
     @media (max-width: 1100px) {
       .hero-grid,
@@ -811,7 +822,7 @@
         </div>
 
         <div class="about-grid">
-          <div class="about-card">
+          <div class="about-card reveal">
             <h3>Vitório Polpas</h3>
             <p>
               A Vitório Polpas trabalha com polpa de maracujá a partir de um processo próprio, começando no cultivo e seguindo por etapas que priorizam qualidade, conservação e segurança no armazenamento.
@@ -904,7 +915,7 @@
         </div>
 
         <div class="products-grid">
-          <div class="product-card">
+          <div class="product-card reveal">
             <div class="product-image">Imagem do produto<br>polpa de maracujá</div>
             <div class="product-content">
               <h3>Polpa de maracujá</h3>
@@ -949,7 +960,7 @@
         </div>
 
         <div class="contact-grid">
-          <div class="contact-card">
+          <div class="contact-card reveal">
             <h3>Atendimento comercial</h3>
             <p>
               Para consultar valores, disponibilidade, entregas e demais informações, entre em contato pelos canais abaixo.
@@ -984,7 +995,7 @@
             </div>
           </div>
 
-          <div class="contact-info">
+          <div class="contact-info reveal">
             <h3>Informações importantes</h3>
             <p>
               A Vitório Polpas trabalha com produção própria e armazenamento adequado, buscando manter qualidade e organização em todo o processo.
@@ -1048,6 +1059,24 @@
           <p>Endereço: Torre de Pedra, São Paulo - SP</p>
         </div>
       </div>
+      
+      <script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach((el) => {
+      const elementTop = el.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 80) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+</script>
 
       <div class="footer-bottom">
         © 2026 Vitório Polpas. Todos os direitos reservados.
