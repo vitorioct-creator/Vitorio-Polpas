@@ -452,17 +452,16 @@
     }
 
     .product-image {
-      height: 220px;
-      background: linear-gradient(135deg, #f6df91, #f0c347);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(47, 93, 58, 0.8);
-      font-size: 1.1rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 20px;
-    }
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
     .product-content {
       padding: 26px;
@@ -952,7 +951,9 @@
 
         <div class="products-grid">
           <div class="product-card reveal">
-            <div class="product-image">Imagem do produto<br>polpa de maracujá</div>
+            <div class="product-image">
+  <img src="imagens/produto.jpg" alt="Polpa de maracujá">
+</div>
             <div class="product-content">
               <h3>Polpa de maracujá</h3>
               <p>Produto disponível sob consulta comercial.</p>
